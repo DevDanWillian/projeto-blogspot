@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Container} from "react-bootstrap";
+import {BrowserRouter, Routes, Route, Router} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import NavbarComp from "./components/NavbarComp";
+import Posts from "./components/Posts";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+function App () {
+    return (
+        <div className="App bg-info-subtle min-vh-100 align-items-center text-dark">
+            <header className="">
+            <NavbarComp/>
+            </header>
+                            
+                        
+                    
+                
+            
+        </div>
+
+    )
 }
 
 export default App;
