@@ -12,32 +12,34 @@ function NavbarComp() {
       Navbar.Brand é o container do logo
       Nav.Link é o container dos links
       Nav.Link é o container dos bottons */}
-      <Navbar className='bg-primary text-light expand-sm d-flex fw-bold' data-bs-theme='dark' expand='md'>
+      <Navbar className='bg-primary text-light expand-sm d-flex fw-bold d-flex' data-bs-theme='dark' expand='md'>
         <Container className='' fluid>
-          <Navbar.Brand as={NavLink} to={'/home'} className='fs-3'>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Blogger_Shiny_Icon.svg' width='50' alt='logo' className='d-inline-block align-middle'/>
-          BlogDevDan
-          </Navbar.Brand>
 
+          
+            <Navbar.Brand as={NavLink} to={'/'} className='fs-3'>
+            <img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Blogger_Shiny_Icon.svg' width='50' alt='logo' className='d-inline-block align-middle'/>
+            BlogDevDan
+            </Navbar.Brand>
+          
 
-
-            <Form className="d-flex">
-              <Form.Control type="search" placeholder="Search" className="me-2 bg-light" aria-label="Search"/>
-              <Button variant="success">Search</Button>
-            </Form>
-
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-
-            <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '150px' }} navbarScroll >
-            <Nav.Link as={NavLink} to={'/profile'} >Profile</Nav.Link>
-            <Nav.Link as={NavLink} to={'/posts'} >Posts</Nav.Link>
-            <Nav.Link as={NavLink} to={'/config'} >Configuration</Nav.Link>
-
+            <Container className='d-flex justify-content-center'>
+              <Form className="d-flex">
+                <Form.Control type="search" placeholder="Search" className="me-2 bg-light" aria-label="Search"/>
+                <Button className='me-2' variant="success">Search</Button>
+              </Form>
+              
+                        <Navbar.Toggle aria-controls="navbarScroll"/>
+                        <Navbar.Collapse id="navbarScroll">
+              
+                        <Nav className=" my-2 my-lg-0 ms" navbarScroll >
+                        <Nav.Link className='ms-5' as={NavLink} to={'/profile'} >Profile</Nav.Link>
+                        <Nav.Link as={NavLink} to={'/posts'} >Posts</Nav.Link>
+                        <Nav.Link as={NavLink} to={'/config'} >Configuration</Nav.Link>
+            
 
 
           </Nav>
-          </Navbar.Collapse>
+          </Navbar.Collapse></Container>
         </Container>
       </Navbar>
     </div>
