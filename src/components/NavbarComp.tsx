@@ -1,49 +1,44 @@
 import React from 'react';
-import {Link, NavLink, Router} from 'react-router-dom';
-import { LinkContainer} from 'react-router-bootstrap';
+import {Link, NavLink, Router, Route} from 'react-router-dom';
 
-import { Container, Navbar, Nav, NavbarCollapse, Form, Button } from 'react-bootstrap';
+import { Container, Navbar, Nav, Form, Button } from 'react-bootstrap';
 
 function NavbarComp() {
   return (
-    <div>
+    <div className=''>
       {/*Navbar é o container do navbar
       Nav é o container dos bottons
       NavbarCollapse é o container dos links
       Navbar.Brand é o container do logo
       Nav.Link é o container dos links
       Nav.Link é o container dos bottons */}
-      <Navbar className='bg-primary text-light expand-sm mt-1 d-flex fw-bold' data-bs-theme='dark'>
+      <Navbar className='bg-primary text-light expand-sm d-flex fw-bold' data-bs-theme='dark' expand='md'>
         <Container className='' fluid>
-          <Navbar.Brand href='#home' className=''>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Blogger_Shiny_Icon.svg' width='50' alt='logo'/>
+          <Navbar.Brand as={NavLink} to={'/home'} className='fs-3'>
+          <img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Blogger_Shiny_Icon.svg' width='50' alt='logo' className='d-inline-block align-middle'/>
           BlogDevDan
           </Navbar.Brand>
 
-          {/*Nav é os buttoen de navbar*/}
-          <Nav className=''>
-            <Form className="d-flex me-5">
-              <Form.Control
-              type="search" placeholder="Search" className="me-2" aria-label="Search"/>
+
+
+            <Form className="d-flex">
+              <Form.Control type="search" placeholder="Search" className="me-2 bg-light" aria-label="Search"/>
               <Button variant="success">Search</Button>
             </Form>
 
-            <NavbarCollapse className='justify-content-end' id='navbarContent'>
-              
-              
-                <LinkContainer to='/'><Nav.Link>Home</Nav.Link></LinkContainer>
-              
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
 
-              <Nav.Link href='#profile'>Profile</Nav.Link>
-            
-              <Nav.Link href='#config'>
-              Configurations
-              </Nav.Link>
-            </NavbarCollapse>
+            <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '150px' }} navbarScroll >
+            <Nav.Link as={NavLink} to={'/profile'} >Profile</Nav.Link>
+            <Nav.Link as={NavLink} to={'/posts'} >Posts</Nav.Link>
+            <Nav.Link as={NavLink} to={'/config'} >Configuration</Nav.Link>
+
+
+
           </Nav>
+          </Navbar.Collapse>
         </Container>
-        
-
       </Navbar>
     </div>
   );

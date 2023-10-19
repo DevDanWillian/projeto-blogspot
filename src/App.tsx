@@ -5,8 +5,11 @@ import {BrowserRouter, Routes, Route, Router} from 'react-router-dom';
 
 import NavbarComp from "./components/NavbarComp";
 import Posts from "./components/Posts";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import Config from "./components/Config";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App () {
@@ -15,7 +18,13 @@ function App () {
             <header className="">
             <NavbarComp/>
             </header>
-                            
+        <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/posts' element={<Posts/>} />
+            <Route path="/profile" element={<Profile/>}/>
+            <Route path='config' element={<Config/>}/>
+        </Routes>
+
                         
                     
                 
