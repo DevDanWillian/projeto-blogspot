@@ -22,7 +22,7 @@ function NavbarComp() {
             </Navbar.Brand>
           
 
-            <Container className='d-flex justify-content-center'>
+            <Container className='d-flex justify-content-center' >
               <Form className="d-flex">
                 <Form.Control type="search" placeholder="Search" className="me-2 bg-light" aria-label="Search"/>
                 <Button className='me-2' variant="success">Search</Button>
@@ -31,7 +31,7 @@ function NavbarComp() {
                         <Navbar.Toggle aria-controls="navbarScroll"/>
                         <Navbar.Collapse id="navbarScroll">
               
-                        <Nav className=" my-2 my-lg-0 ms" navbarScroll >
+                        <Nav className=" my-2 my-lg-0 me-auto" navbarScroll >
                         <Nav.Link className='ms-5' as={NavLink} to={'/profile'} >Profile</Nav.Link>
                         <Nav.Link as={NavLink} to={'/posts'} >Posts</Nav.Link>
                         <Nav.Link as={NavLink} to={'/config'} >Configuration</Nav.Link>
