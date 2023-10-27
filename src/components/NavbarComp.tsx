@@ -20,27 +20,24 @@ function NavbarComp() {
             <img src='https://upload.wikimedia.org/wikipedia/commons/8/83/Blogger_Shiny_Icon.svg' width='50' alt='logo' className='d-inline-block align-middle'/>
             BlogDevDan
             </Navbar.Brand>
-          
+          <Navbar.Toggle aria-controls="navbarScroll"/>
+            <Navbar.Collapse id="navbarScroll">
 
-            <Container className='d-flex justify-content-center' >
               <Form className="d-flex">
-                <Form.Control type="search" placeholder="Search" className="me-2 bg-light" aria-label="Search"/>
+                <Form.Control type="search" placeholder="Search" className="me-2 bg-light w-100" aria-label="Search"/>
                 <Button className='me-2' variant="success">Search</Button>
               </Form>
               
-                        <Navbar.Toggle aria-controls="navbarScroll"/>
-                        <Navbar.Collapse id="navbarScroll">
-              
-                        <Nav className=" my-2 my-lg-0 me-auto" navbarScroll >
-                        <Nav.Link className='ms-5' as={NavLink} to={'/profile'} >Profile</Nav.Link>
-                        <Nav.Link as={NavLink} to={'/posts'} >Posts</Nav.Link>
-                        <Nav.Link as={NavLink} to={'/config'} >Configuration</Nav.Link>
-            
+            <Container className='d-flex justify-content-center' >  
+              <Nav className=" my-2 my-lg-0" style={{ maxHeight: '150px' }} navbarScroll >
+              <Nav.Link className='' as={NavLink} to={'/profile'} >Profile</Nav.Link>
+              <Nav.Link as={NavLink} to={'/posts'} >Posts</Nav.Link>
+              <Nav.Link as={NavLink} to={'/config'} >Configuration</Nav.Link>
+              </Nav>
+            </Container>
 
-
-          </Nav>
           </Navbar.Collapse></Container>
-        </Container>
+        
       </Navbar>
     </div>
   );
