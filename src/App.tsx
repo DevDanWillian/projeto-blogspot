@@ -2,15 +2,13 @@ import React from "react";
 import {Container} from "react-bootstrap";
 import {BrowserRouter, Routes, Route, Router} from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavbarComp from "./components/NavbarComp";
 import Posts from "./components/Posts";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import Config from "./components/Config";
-
-
-
 
 function App () {
     return (

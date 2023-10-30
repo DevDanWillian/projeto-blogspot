@@ -6,6 +6,8 @@ import ModalChangeImage from './ModalChangeImage'
 const Profile = () => {
   let userName= 'dan'
 
+  const profileImage = useRef(null);
+
   const [showModalImage, setShowModalImage] = useState(false);
 
   const handleModalImage = () => {
@@ -18,12 +20,12 @@ const Profile = () => {
 
   return (
     <div >
-      <Container className='border border-primary-subtle border-5 rounded-5 mt-1 text-center col-sm-7'>
+      <Container className='border border-primary-subtle border-5 rounded-5 mt-1 text-center col-sm-7 justify-content-center'>
 
         <h1 className=' mt-4 fw-bold'>Bem Vindo {userName}</h1>
-        <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSm08qLsKrgJRZGC1ulKQh9TAHHooYB2uHHxQwtwySrvcO5bbvuB2DIZ_Mr-T0lqHVp9w&usqp=CAU" alt="profilePic" min-width={50} className='m-3' roundedCircle fluid onClick={handleModalImage}/>
+        <Image role='button' src="https://th.bing.com/th/id/OIP.07oHujH3TSqW-GYqt_-TaQHaFj?pid=ImgDet&rs=1" alt="profilePic" min-width='75%' className='m-auto p-3 rounded-circle pointer' fluid onClick={handleModalImage} ref={profileImage}/> 
 
-<ModalChangeImage showModalImage={showModalImage} handleModalImage={handleModalImage} handleCloseModalImage={handleCloseModalImage} />
+<ModalChangeImage showModalImage={showModalImage} handleModalImage={handleModalImage} handleCloseModalImage={handleCloseModalImage} handleModalImageChange={handleCloseModalImage} />
 
       </Container>
       
